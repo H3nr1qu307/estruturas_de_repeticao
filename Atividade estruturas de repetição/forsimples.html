@@ -1,0 +1,14 @@
+<script>
+    var carros = [ //Array carros
+      { id: 1, modelo: 'Corsa', marca: 'Chevrolet', preco: 45000, createdAt: 1534506085621 }, // Aqui está a descrição do primeiro modelo de carro contido no Array carros
+      { id: 2, modelo: 'Punto', marca: 'Fiat', preco: 120000, createdAt: 1534506085621 } // Aqui está a descrição do segundo modelo de carro contido no Array carros
+    ]
+    
+    var total = 0; // criação da variável que ira receber o valor total dos dois carros
+    
+    for(var i = 0; i < carros.length; i++) { // nesse laço FOR acontece a soma 
+        total += carros[i].preco 
+        // primeiro o valor do carro um é pego e somado com a variável total, logo depois a variável total que recebeu o valor do carro um (porque a variável total = 0, logo qualquer valor somado a ela será o próprio valor) passa por outra repetição na qual pega o valor do carro dois e soma com o valor já existente
+    }
+    console.log(total); // Mostrando o valor total no console do navegador (total = 165000)
+</script>

@@ -1,0 +1,76 @@
+<script>
+//Laço FOR EACH 
+        //Valor retornado: Verde Amarelo Azul Branco
+        cores = ["Verde", "Amarelo", "Azul", "Branco"]; //Array cores
+
+function imprimir(item) {
+    console.log(item); //A função pega um item a cada repetição
+}
+
+cores.forEach(imprimir); // Ele pega as cores através da função
+
+//Valor retornado: 0 2 4 6 8 10 12 14 16 18 20
+numeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+function tabuadaDe2(item) {
+    console.log(item*2); //Pega o item e multiplica por 2
+}
+
+numeros.forEach(tabuadaDe2); //Os itens são retornados após passarem pela função tabuadaDe2()
+
+//Valor retornado: 55
+numeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+total = 0;
+
+function somar(item) {
+    total += item; //Soma o total ao item chamado
+    //Volta 1 - total = 0 + 0 = 0
+    //Volta 2 - total = 0 + 1 = 1
+    //Volta 3 - total = 1 + 2 = 3
+    // ...
+    //Volta 11 - total = 45 + 10 = 55 
+}
+
+numeros.forEach(somar); //Chama a função somar()
+console.log(total); //Pega o valor final de total após passar pela função chamada
+
+//Array retornado: ["Fiat", "Ford"]
+marcas = ["Fiat", "Chevrolet", "Ford", "Volkswagen"]
+marcasIniciadasComF = [];
+novoIndice = 0;
+
+function selecionarMarcas(item, indice) {
+    if (marcas[indice].indexOf("F") == 0) {
+        marcasIniciadasComF[novoIndice] = marcas[indice]; //Vê se há alguma marca dentro do arrray marcas que começe com F
+        novoIndice++;
+    }
+}
+
+marcas.forEach(selecionarMarcas);//Chama a função selecionarmarcas()
+console.log(marcasIniciadasComF); //Pega as marcas atirbuidas ao arrray marcasIniciadasComF  = ["Fiat", "Ford"]
+
+//Array retornado: ["ALBERTO", "ALEX", "SANDRO", "ROBERTA"]
+nomes = ["Alberto", "Alex", "Sandro", "Roberta"]; //Array nomes
+
+function converterParaMaisculo(item, indice) {
+    nomes[indice] = nomes[indice].toUpperCase(); //Converte os nomes pegos pela função em todas as letras maiúsculas
+}
+
+nomes.forEach(converterParaMaisculo); //Chama a função
+console.log(nomes); //Pega os nomes reatribuidos pela função ao array nomes[]
+
+//Valor retornado: Ana Roberta
+nomes = ["Alberto", "Alex", "Sandro", "Ana Roberta"]; //Array nomes
+tamanhoNome = 0; //Inicialização da variável que ira receber o valor de letras de cada nome
+nome = ""; //Inicialização da variável que irá receber o maior nome
+
+function maiorNome(item, indice) { //Função para detectar o maior nome
+    if (nomes[indice].length > tamanhoNome) {
+        nome = nomes[indice]; 
+        tamanhoNome = nomes[indice].length;
+    }
+}
+
+nomes.forEach(maiorNome); //Chama a função maiorNome()
+console.log(nome);//Retorna o maior nome
+</script>

@@ -1,0 +1,58 @@
+<script>
+    // Laço FOR IN
+    
+    //Ele pega a posição do item e não o valor, mas faz a mesma coisa que os outros dois laços
+    
+    // EXEMPLOS FOR IN
+    
+    //EX 1
+    const cores = [ 'Verde', 'Amarelo', 'Azul', 'Branco' ] // Criação do array cores
+    
+    for (const index in cores) {
+      console.log(index, cores[index]) // index é o valor posicional dos itens, cores é o valor em si 
+      /*
+      0 "Verde"
+      1 "Amarelo"
+      2 "Azul"
+      3 "Branco"
+      */
+    }
+    
+    
+    //EX 2
+    const pessoa = {
+      nome: 'Bruno',
+      idade: 25,
+      sexo: 'masculino'
+    }
+    
+    for (const index in pessoa) {
+      console.log(`${index} - ${pessoa[index]}`) // Nesse caso ira ser retornado os atributos dentro do array e o que eles contém dentro
+    }
+    //{index} pega a posição no caso as posições nome, idade e sexo
+    // {pessoa[index]} éga o elemento da posição solicitada
+    // nome - Bruno | idade - 25 | sexo - masculino
+
+    //EX 3
+    const produtos = [ // array produtos
+        { descricao: 'Resma Ofício', valor: 11.50, quantidade: 10 }, // descrição produto e as propriedades do produto 1
+        { descricao: 'Lapis preto', valor: 0.50, quantidade: 3 }, // descrição produto e as propriedades do produto 2
+        { descricao: 'Transferidor plastico', valor: 1.20, quantidade: 4 } // descrição produto e as propriedades do produto 3
+    ]
+
+    let final = 0; 
+
+    for (const index in produtos) {
+    const { valor, quantidade } = produtos[index] // Pega o valor e quantidade de cada item
+
+    final += valor * quantidade
+    /**
+    Na primeira final = 0, então ele receberá a multiplicação do valor pela quantidade | final = 115
+    Na segunda volta se somara final(115) com o resultado da multiplicação do valor pela quantidade | final = 115 + 1.5 = 116.5
+    Na terceira volta se somara final(116.5) com o resultado da multiplicação do valor pela quantidade | final = 116.5 + 4.8 = 121.3
+    */
+    }
+
+    console.log(final) // 121.3
+
+</script>
